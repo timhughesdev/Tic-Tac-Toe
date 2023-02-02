@@ -14,12 +14,31 @@ playerX = ticTacToeXOBlank[0];
 playerO = ticTacToeXOBlank[1];
 // This function makes each click regardless of where iterate the array
 const buttonGameClicked = (event) => {
-  event.target.innerHTML == ticTacToeXOBlank[currentSymbol];
+  event.target.innerHTML = ticTacToeXOBlank[currentSymbol];
   currentSymbol++;
   if (currentSymbol >= ticTacToeXOBlank.length) {
     currentSymbol = 0;
   }
+  //Call checkWinner function for O and X otherwise display nothing
+  let scoreText = document.getElementById("score-text");
+  let xWins = () => {
+    scoreText.innerHTML = "X is the Winner!";
+  }; //X wins
+  let oWins = () => {
+    scoreText.innerHTML = "O is the Winner!";
+  }; //O wins
+  let noText = () => {
+    scoreText.innerHTML = " ";
+  }; //empty string
+  if (checkWinner("X")) {
+    xWins();
+  } else if (checkWinner("O")) {
+    oWins();
+  } else {
+    noText();
+  }
 };
+
 for (
   let gridCollection = 0;
   gridCollection < gameButtons.length;
@@ -54,7 +73,7 @@ for (
 //     noText();
 //   }
 // };
-// loop over the grid-buttons and add click function to them.
+// // loop over the grid-buttons and add click function to them.
 // for (
 //   let gridCollection = 0;
 //   gridCollection < gameButtons.length;
