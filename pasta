@@ -7,7 +7,7 @@
 //////////////||PLAYERS MOVE/CLICK||////////////////
 ///////////////--------------------/////////////////
 ////////////////////////////////////////////////////
-let ticTacToeXOBlank = ["X", "O", ""]; //ran into errors because "" / " "
+let ticTacToeXOBlank = ["X", "O", ""]; //ran into errors because there is a big difference between "" / " "
 let currentSymbol = 0;
 let gameButtons = document.getElementsByClassName("grid-button");
 playerX = ticTacToeXOBlank[0];
