@@ -10,5 +10,5 @@ app.use(express.static("client"));
 // }); // Express.js is not able to render the static css and JS file from public folder using sendFile. Use middleware express.static method
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`Port is listening on: ${port}`);
 });
