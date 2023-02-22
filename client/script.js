@@ -28,6 +28,9 @@ const buttonGameClicked = (event) => {
   let oWins = () => {
     scoreText.innerHTML = "O is the Winner!";
   }; //O wins
+  let tieText = () => {
+    scoreText.innerHTML = "Its a Tie!";
+  };
   let noText = () => {
     scoreText.innerHTML = " ";
   }; //empty string
@@ -35,6 +38,8 @@ const buttonGameClicked = (event) => {
     xWins();
   } else if (checkWinner("O")) {
     oWins();
+  } else if (checkTie()) {
+    tieText();
   } else {
     noText();
   }
@@ -130,4 +135,12 @@ function checkWinner(player) {
     return true;
   }
   return false;
+}
+function checkTie() {
+  for (let i = 0; i < gameButtons.length; i++) {
+    if (gameButtons[i].innerHTML === "") {
+      return false;
+    }
+  }
+  return true;
 }
