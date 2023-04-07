@@ -7,9 +7,10 @@
     <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <h1 class="game-title">Tic Tac Toe</h1>
+
   <body class="game-container">
-    <div class="game-board">
+    <h1 class="game-title">Tic Tac Toe</h1>
+    <main class="game-board">
       <div class="grid-item">
         <button class="grid-button" id="grid-0"></button>
       </div>
@@ -37,10 +38,20 @@
       <div class="grid-item">
         <button class="grid-button" id="grid-8"></button>
       </div>
-    </div>
+    </main>
+    <br />
+    <formContainer class="user-instance-container">
+      <form id="startForm">
+        <input type="text" id="nameInput" placeholder="Alias" />
+        <input type="text" id="codeInput" placeholder="Name The Instance" />
+        <button type="submit" id="joinGame">Create or Join</button>
+      </form>
+    </formContainer>
+    <button id="testPing">Test The Ping!</button>
     <div class="score-container">
       <h1 id="score-text"></h1>
     </div>
+    <script src="/socket.io/socket.io.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>
