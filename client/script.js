@@ -1,7 +1,33 @@
-// create a grid of 3 rows and 3 columns with a button in each cell
-// when you click a game button in a grid make it cycle x, o, blank.
-// determine if there is a winner and who the winner is.
-// instead of using .innerHTML consider using .textContent which
+//---------Test ping function --------//
+const pingButton = document.getElementById("testPing");
+pingButton.addEventListener("click", ping);
+
+const startForm = document.getElementById("startForm");
+const nameInput = document.getElementById("nameInput");
+const codeInput = document.getElementById("codeInput");
+
+startForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const username = nameInput.ariaValueMax;
+  const code = codeInput.value;
+
+  //TODO
+  // Submit a request to join the game
+  // Take back whether it works and what player number they are
+});
+
+function ping() {
+  const startTime = new Date().getTime();
+  fetch("http://localhost:3001/ping", {
+    method: "GET",
+  })
+    .then((res) => res.json())
+    .then((resObj) => {
+      const endTime = new Date().getTime();
+      console.log(resObj.ping + " - " + (endTime - startTime) + "ms");
+    })
+    .catch();
+}
 
 ////////////////////////////////////////////////////
 ///////////////--------------------/////////////////
